@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    cursor: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcIwR9P%2FbtraRjIi6El%2FofkcHd4wk3BWMKZorWGH0k%2Fimg.png"), auto;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍔</text></svg>") 16 0, auto;
+}
+h1 {
+    margin-top : 10px;
+}
+.select {
+    margin-top : 30px;
+}
+img {
+    margin-top : 10px;
+    width:50px;
+}
+.wrapper {
+    list-style: none;
+    text-align: center;
+}
+.slide {
+    display: inline-block;
+    margin-right: 20px;
+}
+.slide {
+    margin-top: 30px;
+    background-color: antiquewhite;
+    width: 130px;
+    height: 100px;
+    border-radius: 30px;
+
+}
+a {
+    text-decoration-line: none;
+}
+select {
+    width: 150px;
+    font-size: 17px;
+    /* 원하는 너비설정 */
+    padding: .8em .5em;
+    /* 여백으로 높이 설정 */
+    font-family: inherit;
+    /* 폰트 상속 */
+    background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;
+    /* 네이티브 화살표 대체 */
+    border: 1px solid #999;
+    border-radius: 0px;
+    /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none;
+    /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+iframe {
+    margin-top: 50px;
+    width:500px;
+    border-radius:30px;
+    /* text-align: center; */
+}

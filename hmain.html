@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오목조목여행사이트</title>
+    <link rel="stylesheet" href="./css/hmain.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0,0">
+
+<!-- <link rel="stylesheet" href="./loginRegister.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" /> -->
+
+
+
+  </head>
+  <body>
+    <!--상단바-->
+    <div>
+      <div id="head">
+        <div id="audio">
+            <h4>Happy Travel with music</h4>
+            <audio autoplay controls  ><source src="Bedtime - Reed Mathis.mp3" type="audio/mp3"></audio></audio>
+        </div>
+      
+
+          <button id="btn">☰</button>
+          <nav id="nav" class="">
+            <ul>
+              <li><a href="#1" onclick="location.href='./html/login.html'">로그인</a></li>
+              <li><a href="#1" onclick="location.href='./html/register.html'">회원가입</a></li>
+            </ul>
+          </nav>
+          </button> 
+            <div class="box1">      
+                <h1><img id="headBag" src="./img/head1.png" alt="" onclick="window.location.reload()"><span style= "color: #142c66;"> 
+                    Ꙭ̮</span></h1>
+                <!-- <input type="hidden" name="msg" value="html"> -->
+                <div class="buttom_box">
+                    <span class="button"> <!--누르면 이동-->
+                        <a href="" target="blank">지역별여행지</a>
+                    </span>
+                    <span class="button">
+                        <a href="" target="blank">지역별맛집</a>
+                    </span>
+                    <span class="button">
+                        <a href="" target="blank">공유게시판</a>
+                    </span>
+                    <span class="button"> 
+                        <a href="" target="blank">❤마이버킷❤</a>
+                    </span>
+                </div>
+            </div>
+           
+    <!--중간-->
+    <img src="./img/tasty.png">
+    <h1>식도락 여행지 선택하기</h1>
+    <div class="select">
+        <form action="post">
+            <select id = 'city' name='city' onchange="areaChange(this.value)">
+                <option disabled selected>시도선택</option>
+            </select>
+            <select id = 'district' name = 'district'>
+                <option disabled selected>구군선택</option>
+            </select>
+        </form>
+    </div>
+    <div>
+        <div class="filterBox">
+            <ul class="wrapper">
+                <li class="slide" data-food-type="all">
+                    <a href="#" >
+                        <img src="./img/filter01.png">
+                        <div>전체</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="kfood">
+                    <a href="#" >
+                        <img src="./img/filter02.png">
+                        <div>한식</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="westfood">
+                    <a href="#" >
+                        <img src="./img/filter03.png">
+                        <div>양식/레스토랑</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="meat">
+                    <a href="#" >
+                        <img src="./img/filter04.png">
+                        <div>고기/구이류</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="seefood">
+                    <a href="#">
+                        <img src="./img/filter05.png">
+                        <div>씨푸드</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="worldfood">
+                    <a href="#">
+                        <img src="./img/filter06.png">
+                        <div>일/중/세계음식</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="dessert">
+                    <a href="#">
+                        <img src="./img/filter07.png">
+                        <div>카페/디저트</div>
+                    </a>
+                </li>
+                <li class="slide" data-food-type="nightlife">
+                    <a href="#">
+                        <img src="./img/filter08.png">
+                        <div>나이트라이프</div>
+                    </a>
+                </li>
+            </ul>
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358608.204752991!2d124.09772587750123!3d34.707933507634415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654b9c11076adf%3A0x473bfe78ad8fb4b4!2z7ZWY66Oo7Yyh!5e0!3m2!1sko!2skr!4v1693982151943!5m2!1sko!2skr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+        </div>
+    </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="./main.js"></script>
+    <!--하단-->
+    <div class="container-main">
+        <div class="side" id = "side">
+          <!-- <article class="article-container">
+            <img src="./assets/img/마시내탕수육.jpg" alt="1" />
+            <p class="info-name">마시내탕수육</p>
+            <p class="info-hidden">마시내탕수육</p>
+            <div class="info-des">
+              <span class="material-symbols-outlined"> location_on </span
+              ><span class="info-des">대전 유성구 문화원로14번길 14 1층</span>
+            </div>
+            <div class="info-des">
+              <span class="material-symbols-outlined"> call </span>
+              <span class="info-des">0507-1396-9981</span>
+            </div>
+          </article> -->
+            </div>
+          </article>
+        </div>
+      </div>
+  
+      <!-- 하단 시작 -->
+      <div class="footer">
+        <ul>
+          <img src="./assets/img/ssafy_logo.png" alt="ssafy_logo" />
+          <li><span class="material-symbols-outlined"> home </span><a href="">사이트소개</a></li>
+          <!-- <li><a href="">개인정보처리방침</a></li> -->
+          <li><span class="material-symbols-outlined"> inventory </span><a href="">이용약관</a></li>
+          <li><span class="material-symbols-outlined"> location_on </span><a href="">오시는길</a></li>
+        </ul>
+      </div>
+      <!-- 하단 끝 -->
+
+    <script src="./js/hmain.js"></script>
+    <script src="./js/hmouse.js"></script>
+    <script src="./js/slide.js"></script>
+</body>
+</html>

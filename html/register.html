@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 정보 관리 사이트</title>
+    <link rel="stylesheet" href="../css/loginRegister.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="header-nav">
+        <div>
+          <a href="#"
+            ><img id="headBag" src="../img/head1.png" onclick="location.href='../hmain.html'"
+          /></a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="login-page">
+        <h2 class="h2">즐거운 여행 되세요Ꙭ̮</h2>
+        <div class="form">
+          <form class="register-form">
+            <input id="id" name="id" type="text" placeholder="id" />
+            <input id="password" name="password" type="password" placeholder="password" />
+            <input id="email" name="email" type="email" placeholder="email address" />
+            <input id="name" name="name" type="text" placeholder="name" />
+            <input id="age" name="age" type="number" placeholder="age" />
+            <button onclick="regist()" type="button">회원 등록</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <ul class="footer-list">
+        <li><a href="#">Enjoy your Trip❤</a></li>
+        <li>&copy; Enjoy</li>
+      </ul>
+      <script type="text/javascript" src="../js/loginRegister.js"></script>
+    </footer>
+
+    <script src="../js/hmouse.js"></script>
+  </body>
+</html>

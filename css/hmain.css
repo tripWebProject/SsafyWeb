@@ -1,0 +1,113 @@
+/*style 설정*/
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+}
+
+#audio {
+  /* background-color: rgb(96, 173, 148); */
+  border: none;
+  /* color: rgb(11, 71, 124); */
+  /* position: fixed; */
+  top: 35px;
+  right: 2px;
+  padding: 0.5rem;
+}
+
+.box1 {
+    margin: 1em 1em;
+    padding:1em;
+    border-radius:40px;
+    background-color:#f3f3f3;
+    text-align: center;
+}
+
+#headBag {
+    width: 200px; 
+}
+
+button {
+    background-color: rgb(96, 173, 148);
+    border-radius: 20%;
+    border: none;
+    color: aliceblue;
+    position: fixed;
+    top: 35px;
+    left: 50px;
+    padding: 0.5rem;
+    transition: transform 0.3s ease-in-out; /*스르륵 나왔다 들어가기*/
+  }
+
+  button.active {
+    transform: translateX(170px);
+  }
+
+  nav {
+    background-color: rgb(162, 196, 197);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 100vh;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    font-family: 'Jua', sans-serif;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul li {
+    padding: 1rem 0;
+  }
+
+  nav ul > li > a {
+    color: aliceblue;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+
+.button {
+    text-align: center;
+    margin: 1em 1em;
+    background-color: rgb(150, 247, 214);
+    font-weight: bolder;
+    /* background-color:#fff; */
+    box-shadow: 0 0 6px 1px rgb(150, 247, 214), 0 0 6px 1px rgb(150, 247, 214) inset;
+    border-radius: 30px;
+}
+
+.buttom_box {
+    padding: 30px;
+    font-size: 27px;
+    font-family: 'Jua', sans-serif;
+}
+
+.box2 {
+    margin: 2em 2em;
+    padding:2em;
+    border-radius: 30px 60px/60px 30px;
+    border: solid 8px #ccc7be;
+    background-color:#f7e9e8;
+}
+
+#headBag:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2); /* 크롬 /
+    -moz-transform: scale(1.7); / 파이어폭스 /
+    -o-transform: scale(1.7); / 오페라 */
+    z-index: 1;
+    align-items: center;
+}
