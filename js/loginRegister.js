@@ -8,7 +8,7 @@ function regist() {
   
     // 입력값 검증
     if (id.trim() === "" || password.trim() === "" || name.trim() === "" || email.trim() === "" || age.trim() === "") {
-      alert("빈칸이 없도록 입력해주세요.");
+      alert("빈칸을 모두 채워주세요.");
       return;
     } else {
       // input data로 user 만들기
@@ -22,7 +22,7 @@ function regist() {
   
       // user 객체 문자열로 바꿔서 로컬스토리지에 저장
       localStorage.setItem("user", JSON.stringify(user));
-      alert("사용자 등록 성공!");
+      alert("등록해주셔서 감사합니다 Ꙭ̮");
       // 로그인 화면으로 돌아가기
       location.replace("login.html");
     }
@@ -38,11 +38,11 @@ function regist() {
   
     // 입력값 검증
     if (user && id === user.id && password === user.password) {
-      alert("로그인 성공 !");
+      alert("🍦 즐거운 여행 되세요 🚉");
       // 로그인 성공하면 index 페이지로 이동.
-      location.replace("index.html");
+      location.replace("../hmain.html");
     } else {
-      alert("로그인 실패 !");
+      alert("회원가입을 해주세요");
     }
   }
   

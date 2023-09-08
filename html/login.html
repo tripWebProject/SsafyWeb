@@ -23,10 +23,10 @@
       <div class="login-page">
         <h2 class="h2">즐거운 여행을 떠나볼까요?Ꙭ̮</h2>
         <div class="form">
-          <form class="login-form">
-            <input type="text" placeholder="ID" />
-            <input type="password" placeholder="password" />
-            <button class="login-btn">로그인</button>
+          <form name="login-form" class="login-form">
+            <input id="id" name="id" type="text" placeholder="ID" />
+            <input id="password" name="password" type="password" placeholder="password" />
+            <button class="login-btn" onclick="login()" type="button">로그인</button>
             <button onclick="location.href='register.html'" type="button">회원가입</button>
           </form>
         </div>
@@ -38,6 +38,7 @@
         <li>&copy; Enjoy</li>
       </ul>
     </footer>
+    <script src="../js/loginRegister.js"></script>
     <script src="../js/hmouse.js"></script>
   </body>
 </html>

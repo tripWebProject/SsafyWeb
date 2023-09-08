@@ -60,3 +60,11 @@ iframe {
     border-radius:30px;
     /* text-align: center; */
 }
+
+	
+#map {
+    border-radius:30px;
+    margin: auto;
+    margin-top: 50px;
+    /* text-align: center; */
+}

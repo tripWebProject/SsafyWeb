@@ -1,5 +1,5 @@
 const slides = document.getElementsByClassName("slide");
-console.log("asdad")
+// console.log("asdad");
 for (const slide of slides) {
     slide.addEventListener("click", function() {
         let side = document.querySelector(".side");
@@ -11,7 +11,7 @@ for (const slide of slides) {
             article.className = "article-container";
             
             let img = document.createElement("img");
-            img.src=`./assets/img/${slide.getAttribute('data-food-type')}${i}.png`;
+            img.src=`./assets/img/${slide.getAttribute('data-food-type')}${i}.jpg`;
             article.appendChild(img);
             side.appendChild(article);
         }
