@@ -248,7 +248,10 @@ cnt[16] = new Array(
 );
 cnt[17] = new Array("전체", "서귀포시", "제주시", "남제주군", "북제주군");
 
+
+var areaId = 0;
 function areaChange(value) {
+  areaId = value;
   document.getElementById("district").options.length = 0;
   for (let i = 0; i < cnt[value].length; i++) {
     let optionObj = document.createElement("option");
@@ -256,106 +259,9 @@ function areaChange(value) {
     optionObj.innerText = cnt[value][i];
     document.getElementById("district").appendChild(optionObj);
   }
-
-  // 36.3890161659, 127.35127 대전 첫번째 집
-  // 테스트
-  var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-    mapOption = {
-      // center: new kakao.maps.LatLng(33.450705, 126.570677), // 지도의 중심좌표
-      center: new kakao.maps.LatLng(36.3890161659, 127.35127), // 지도의 중심좌표
-      level: 9, // 지도의 확대 레벨
-    };
-
-  // console.log(positions);
-  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-  var positions = [];
-
-  fetch(
-    "https://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=tJN5AxShHg%2Bgz2XB9l7NRAfvFrPJalvdOfV2K9s3s8LiT2yAyfNb8LovR2QBepY6KYEpSq303TINwEKA9TdOmg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&contentTypeId=39&areaCode=" +
-      value
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      let items = data.response.body.items.item;
-
-  console.log(items.length);
-
-  for (const item of items) {
-    const position = {
-      title: item.title,
-      latlng: new kakao.maps.LatLng(item.mapy, item.mapx), // 주의: 위도와 경도 순서가 바뀌었습니다.
-    };
-    positions.push(position);
-  }
-
-  console.log(positions.length);
-
-  // 마커 이미지의 이미지 주소입니다
-  //   var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-  var imageSrc = "./img/location-pin.png";
-
-  //   var imageSrc = "location-pin.png", // 마커이미지의 주소입니다
-  //     imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-  //     imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-
-  for (var i = 0; i < positions.length; i++) {
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(64, 69);
-
-    // 마커 이미지를 생성합니다
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-      map: map, // 마커를 표시할 지도
-      position: positions[i].latlng, // 마커를 표시할 위치
-      title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-      image: markerImage, // 마커 이미지
-    });
-  }
-  // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-  var mapTypeControl = new kakao.maps.MapTypeControl();
-
-  // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-  // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-  map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-  // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-  var zoomControl = new kakao.maps.ZoomControl();
-  map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-  var moveLatLon = new kakao.maps.LatLng(33.45058, 126.574942);
-  // 지도 중심을 부드럽게 이동시킵니다
-  // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-  map.panTo(positions[0].latlng);
-});
-  // 테스트
-
-  // var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-
-  // var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-  // mapOption = {
-  //     center: new kakao.maps.LatLng(35.8753644169, 128.6276707967), // 지도의 중심좌표
-  //     level: 3 // 지도의 확대 레벨
-  // };
-
-  // var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-  // for (var i = 0; i < positions.length; i ++) {
-
-  //     // 마커 이미지의 이미지 크기 입니다
-  //     var imageSize = new kakao.maps.Size(24, 35);
-
-  //     // 마커 이미지를 생성합니다
-  //     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
-  //     // 마커를 생성합니다
-  //     var marker = new kakao.maps.Marker({
-  //         map: map, // 마커를 표시할 지도
-  //         position: positions[i].latlng, // 마커를 표시할 위치
-  //         title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-  //         image : markerImage // 마커 이미지
-  //     });
-  // }
+  makeMap(value, "./img/filter01_pin.png", 1);
 }
+
 const city = [
   "서울",
   "인천",
@@ -381,4 +287,108 @@ for (let i = 0; i < city.length; i++) {
   optionObj.value = i + 1;
   optionObj.innerText = city[i];
   document.getElementById("city").appendChild(optionObj);
+}
+
+
+
+
+
+var slideElements = document.querySelectorAll('.slide');
+slideElements.forEach(function (slide) {
+  slide.addEventListener('click', function (event) {
+    event.preventDefault(); // 기본 동작 취소
+    var foodType = this.getAttribute('data-food-type');
+    makeMap(areaId, `./img/filter${foodType}_pin.png`,foodType[1]);
+  });
+});
+
+
+function makeMap(value, imageSrc, pageNo) {
+  var slideList = new Array();
+  var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+    mapOption = {
+      center: new kakao.maps.LatLng(36.3890161659, 127.35127), // 지도의 중심좌표
+      level: 9, // 지도의 확대 레벨
+    };
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+  var positions = new Array();
+  fetch(
+    "https://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=tJN5AxShHg%2Bgz2XB9l7NRAfvFrPJalvdOfV2K9s3s8LiT2yAyfNb8LovR2QBepY6KYEpSq303TINwEKA9TdOmg%3D%3D&numOfRows=30&pageNo=" + pageNo + "&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&contentTypeId=39&areaCode=" +
+      value
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      let items = data.response.body.items.item;
+
+  for (const item of items) {
+    const position = {
+      title: item.title,
+      latlng: new kakao.maps.LatLng(item.mapy, item.mapx), // 주의: 위도와 경도 순서가 바뀌었습니다.
+    };
+    positions.push(position);
+
+    const slide = {
+      title: item.title,
+      addr: item.addr1,
+      image: item.firstimage
+    };
+    slideList.push(slide);
+    
+  }
+  movePhoto(slideList);
+  
+  for (var i = 0; i < positions.length; i++) {
+    var imageSize = new kakao.maps.Size(64, 69);
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+    var marker = new kakao.maps.Marker({
+      map: map, // 마커를 표시할 지도
+      position: positions[i].latlng, // 마커를 표시할 위치
+      title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+      image: markerImage, // 마커 이미지
+    });
+  }
+  var mapTypeControl = new kakao.maps.MapTypeControl();
+  map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+  var zoomControl = new kakao.maps.ZoomControl();
+  map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+  map.panTo(positions[0].latlng);
+    });
+  
+}
+
+function movePhoto(slideList) {
+  console.log(slideList);
+  let side = document.querySelector(".side");
+  side.style.transform = "translateX(0)";
+  while (side.firstChild) {
+    side.removeChild(side.firstChild);
+  }
+  var cnt = 0;
+  var i = -1;
+  let row = document.createElement("div"); // 한 행을 나타내는 div 요소
+  row.style.display = "flex"; // Flexbox 레이아웃을 사용하여 요소를 옆으로 나열
+  
+  while (cnt < 5) {
+    if (slideList[++i].image != '') {
+      let temp = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.style.borderRadius = "10px"; // 원하는 값으로 설정
+      
+      img.src = slideList[i].image;
+
+      let title = document.createElement("div"); // "storeTitle" 클래스 추가
+      title.innerHTML = `<h3>${slideList[i].title}</h3>`;
+
+      let addr = document.createElement("div"); // "storeAddr" 클래스 추가
+      addr.innerHTML = slideList[i].addr;
+
+      temp.appendChild(img);
+      temp.appendChild(title);
+      temp.appendChild(addr);
+      cnt++;
+      row.appendChild(temp);
+    }
+    side.appendChild(row);
+  }
 }
