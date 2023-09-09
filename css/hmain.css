@@ -32,7 +32,7 @@ html, body{
     width: 200px; 
 }
 
-button {
+#btn {
     background-color: rgb(96, 173, 148);
     border-radius: 20%;
     border: none;
@@ -44,7 +44,7 @@ button {
     transition: transform 0.3s ease-in-out; /*스르륵 나왔다 들어가기*/
   }
 
-  button.active {
+  #btn.active {
     transform: translateX(170px);
   }
 
