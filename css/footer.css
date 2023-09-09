@@ -24,7 +24,7 @@
   flex-direction: row;
   text-align: center;
   margin: 30px;
-  animation: moveRight 100s linear infinite;
+  animation: moveRight 50s linear infinite;
 }
 
 .side img:hover {
@@ -36,14 +36,15 @@
 
 @keyframes moveRight {
   0% {
-    transform: translateX(0); /* 초기 위치 */
+    transform: translateX(0); 
     transition: transform 0.3s ease-in-out;
   }
   100% {
-    transform: translateX(100%); /* 화면 왼쪽으로 벗어남 */
+    transform: translateX(100%); 
     transition: transform 0.3s ease-in-out;
   }
 }
+
 
 .info-name {
   font-size: 20px;

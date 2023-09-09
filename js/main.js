@@ -297,15 +297,14 @@ var slideElements = document.querySelectorAll('.slide');
 slideElements.forEach(function (slide) {
   slide.addEventListener('click', function (event) {
     event.preventDefault(); // 기본 동작 취소
-    // 클릭된 요소의 data-food-type 값을 받아옵니다.
     var foodType = this.getAttribute('data-food-type');
     makeMap(areaId, `./img/filter${foodType}_pin.png`,foodType[1]);
   });
 });
 
 
-
 function makeMap(value, imageSrc, pageNo) {
+  var slideList = new Array();
   var mapContainer = document.getElementById("map"), // 지도를 표시할 div
     mapOption = {
       center: new kakao.maps.LatLng(36.3890161659, 127.35127), // 지도의 중심좌표
@@ -313,7 +312,6 @@ function makeMap(value, imageSrc, pageNo) {
     };
   var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
   var positions = new Array();
-  console.log(positions);
   fetch(
     "https://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=tJN5AxShHg%2Bgz2XB9l7NRAfvFrPJalvdOfV2K9s3s8LiT2yAyfNb8LovR2QBepY6KYEpSq303TINwEKA9TdOmg%3D%3D&numOfRows=30&pageNo=" + pageNo + "&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&contentTypeId=39&areaCode=" +
       value
@@ -322,14 +320,22 @@ function makeMap(value, imageSrc, pageNo) {
     .then((data) => {
       let items = data.response.body.items.item;
 
-
   for (const item of items) {
     const position = {
       title: item.title,
       latlng: new kakao.maps.LatLng(item.mapy, item.mapx), // 주의: 위도와 경도 순서가 바뀌었습니다.
     };
     positions.push(position);
+
+    const slide = {
+      title: item.title,
+      addr: item.addr1,
+      image: item.firstimage
+    };
+    slideList.push(slide);
+    
   }
+  movePhoto(slideList);
   
   for (var i = 0; i < positions.length; i++) {
     var imageSize = new kakao.maps.Size(64, 69);
@@ -348,4 +354,41 @@ function makeMap(value, imageSrc, pageNo) {
   map.panTo(positions[0].latlng);
     });
   
+}
+
+function movePhoto(slideList) {
+  console.log(slideList);
+  let side = document.querySelector(".side");
+  side.style.transform = "translateX(0)";
+  while (side.firstChild) {
+    side.removeChild(side.firstChild);
+  }
+  var cnt = 0;
+  var i = -1;
+  let row = document.createElement("div"); // 한 행을 나타내는 div 요소
+  row.style.display = "flex"; // Flexbox 레이아웃을 사용하여 요소를 옆으로 나열
+  
+  while (cnt < 5) {
+    if (slideList[++i].image != '') {
+      let temp = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.style.borderRadius = "10px"; // 원하는 값으로 설정
+      
+      img.src = slideList[i].image;
+
+      let title = document.createElement("div"); // "storeTitle" 클래스 추가
+      title.innerHTML = `<h3>${slideList[i].title}</h3>`;
+
+      let addr = document.createElement("div"); // "storeAddr" 클래스 추가
+      addr.innerHTML = slideList[i].addr;
+
+      temp.appendChild(img);
+      temp.appendChild(title);
+      temp.appendChild(addr);
+      cnt++;
+      row.appendChild(temp);
+    }
+    side.appendChild(row);
+  }
 }
