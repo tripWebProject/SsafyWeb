@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오목조목여행사이트</title>
+    <link rel="stylesheet" href="./css/musicBtn.css">
     <link rel="stylesheet" href="./css/hmain.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/footer.css" />
@@ -30,9 +31,11 @@
         <div id="head">
             <div id="audio">
                 <h4>Happy Travel with music</h4>
-                <audio autoplay controls>
+            </div>
+            <div id="musicPlayer">
+                <audio controls>
                     <source src="Bedtime - Reed Mathis.mp3" type="audio/mp3">
-                </audio></audio>
+                </audio>
             </div>
 
 
@@ -150,7 +153,7 @@
 
 
             <!--하단-->
-              
+
 
             <div class="container-main">
                 <div class="side" id="side">
@@ -177,5 +180,25 @@
         <script src="./js/slide.js"></script>
 </body>
 
+
+<div class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+    <label class="menu-open-button" for="menu-open">
+        <span class="lines line-1"></span>
+        <span class="lines line-2"></span>
+        <span class="lines line-3"></span>
+    </label>
+
+    <a href="#" class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
+    <a href="#" class="menu-item green"> <i class="fa fa-coffee"></i> </a>
+    <a href="#" class="menu-item red">
+        <h3>♥</h3><i class="fa fa-heart"></i>
+    </a>
+    <a href="#" class="menu-item purple" onclick='musicPurpleBtn()'>
+        <h2>♪</h2><i class="fa fa-microphone"></i>
+    </a>
+    <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
+    <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+</div>
 
 </html>
