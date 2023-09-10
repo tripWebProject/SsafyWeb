@@ -16,8 +16,9 @@ body {
   border: none;
   /* color: rgb(11, 71, 124); */
   /* position: fixed; */
+  margin-top: 10px;
   top: 35px;
-  right: 2px;
+  /* right: 2px; */
   padding: 0.5rem;
 }
 
@@ -38,7 +39,7 @@ body {
 }
 
 #btn {
-  background-color: rgb(96, 173, 148);
+  background-color: rgb(162, 196, 197);
   border-radius: 20%;
   border: none;
   color: aliceblue;
