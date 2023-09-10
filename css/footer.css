@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: row;
   text-align: center;
-  margin: 30px;
+  margin: 50px;
   animation: moveRight 50s linear infinite;
 }
 

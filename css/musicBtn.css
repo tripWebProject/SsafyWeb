@@ -8,9 +8,9 @@
 a {
     color: inherit;
 } */
-
 .menu-item,
 .menu-open-button {
+    /* z-index: 1; */
     background: rgb(162, 196, 197);
     border-radius: 100%;
     width: 80px;

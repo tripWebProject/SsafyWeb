@@ -314,7 +314,7 @@ function makeMap(value, imageSrc, pageNo) {
   var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
   var positions = new Array();
   fetch(
-    "https://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=tJN5AxShHg%2Bgz2XB9l7NRAfvFrPJalvdOfV2K9s3s8LiT2yAyfNb8LovR2QBepY6KYEpSq303TINwEKA9TdOmg%3D%3D&numOfRows=30&pageNo=" + pageNo + "&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&contentTypeId=39&areaCode=" +
+    "https://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=tJN5AxShHg%2Bgz2XB9l7NRAfvFrPJalvdOfV2K9s3s8LiT2yAyfNb8LovR2QBepY6KYEpSq303TINwEKA9TdOmg%3D%3D&numOfRows=60&pageNo=" + pageNo + "&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&contentTypeId=39&areaCode=" +
       value
   )
     .then((response) => response.json())
