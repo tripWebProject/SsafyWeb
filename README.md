@@ -54,7 +54,8 @@ SSAFY 여행 웹 사이트 프로젝트
   - 마우스 : 햄버거 마우스 디자인 및 커서 이동 시 알록달록 색상의 별가루 뿌리기
   - 퀵버튼 : 버튼 클릭 시 6가지 동그란 메뉴버튼 펼치기
   - 지도 맛집 마커 : 음식 종류별로 지도에 마커 디자인
-    ![video01](https://github.com/malinmalin2/tripWebProject1/assets/90679156/89b509bc-7ba2-4094-9ba5-dc97c68852d0)
+
+![video01](https://github.com/malinmalin2/tripWebProject1/assets/90679156/89b509bc-7ba2-4094-9ba5-dc97c68852d0)
 
 ---
 
