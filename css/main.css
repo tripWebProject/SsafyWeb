@@ -71,7 +71,7 @@ iframe {
 
 
 #map {
-    z-index: -1;
+    z-index: 1;
     border-radius: 30px;
     margin: auto;
     margin-top: 50px;

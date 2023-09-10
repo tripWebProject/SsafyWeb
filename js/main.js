@@ -304,6 +304,7 @@ slideElements.forEach(function (slide) {
 
 
 function makeMap(value, imageSrc, pageNo) {
+  if (value >= 9) value = parseInt(value) + 22;
   var slideList = new Array();
   var mapContainer = document.getElementById("map"), // 지도를 표시할 div
     mapOption = {
